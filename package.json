@@ -1,10 +1,10 @@
 {
   "name": "create-later.js-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create later.js + razzle applications easily.",
   "main": "lib/index.js",
   "bin": {
-    "create-razzle-app": "./bin/create-razzle-app"
+    "create-later.js-app": "./bin/create-later.js-app"
   },
   "dependencies": {
     "chalk": "^2.4.1",
@@ -23,13 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/BenMagyar/create-later.js-app.git"
   },
-  "keywords": [
-    "react",
-    "redux",
-    "react-router",
-    "later.js",
-    "create-app"
-  ],
+  "keywords": ["react", "redux", "react-router", "later.js", "create-app"],
   "author": "Ben Magyar <me@benmagyar.com>",
   "license": "MIT",
   "bugs": {
