@@ -1,0 +1,29 @@
+#! /usr/bin/env node
+const chalk = require('chalk');
+const program = require('commander');
+const createLaterApp = require('../lib');
+const package = require('../package.json');
+
+let project;
+let inclusions;
+let preset;
+
+function collectInclusions(value, inclusions) {
+  inclusions.push(value);
+  return inclusions;
+}
+
+program
+  .version(package.version)
+  .arguments('<project-directory>')
+  .option('-i, --include <inclusion>', 'App inclusions', collectInclusions, [])
+  .option('-p, --preset <preset>', 'Preset inclusions')
+  .usage(`${chalk.green('<project-directory> [options]')}`)
+  .action((name, opts) => {
+    project = name;
+    inclusions = opts.include;
+    preset = opts.preset;
+  })
+  .parse(process.argv);
+
+createLaterApp(project, inclusions, preset);
